@@ -85,8 +85,7 @@ def describe_ec2_instances(regions, profiles):
             output = jmespath.search("Reservations[].Instances[].[NetworkInterfaces[0].OwnerId, InstanceId, InstanceType, \
                 State.Name, Placement.AvailabilityZone, PrivateIpAddress, PublicIpAddress, KeyName, [Tags[?Key=='Name'].Value] [0][0]]", response)
             my_data.append(output)
-    return my_data
-
+    return my_data 
 
 def describe_rds_instances(regions):
     my_data = []
@@ -114,4 +113,4 @@ def get_regions_list():
 
 
 if __name__ == '__main__':
-  main()
+    main()
